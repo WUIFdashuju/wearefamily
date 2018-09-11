@@ -16,25 +16,25 @@ window.onload=function() {
 	let btn=document.querySelector(".HXH_submit1");
 	console.log(user,pass,hint,correct,btn);
 	btn.onclick=function(){
-		if(user.value=="还有一天放假" && pass.value!="cjhszcfjw"){
+		if(user.value=="admin" && pass.value!="111111"){
 			correct.style.display="block";
 			hint.style.display="none"
 			mistake1.style.display="block";
 			correct1.style.display="none";
 			mistake.style.display="none";
-		}else if(user.value!="还有一天放假" && pass.value=="cjhszcfjw"){
+		}else if(user.value!="admin" && pass.value=="111111"){
 			mistake.style.display="block";
 			hint.style.display="block"
 			correct1.style.display="block";
 			mistake1.style.display="none";
 			correct.style.display="none";
-		}else if(user.value!="还有一天放假" && pass.value!="cjhszcfjw"){
+		}else if(user.value!="admin" && pass.value!="111111"){
 			mistake.style.display="block";
 			hint.style.display="block"
 			mistake1.style.display="block";
 			correct.style.display="none";
 			correct1.style.display="none";
-		}else if(user.value=="还有一天放假" && pass.value=="cjhszcfjw"){
+		}else if(user.value=="admin" && pass.value=="111111"){
 			mistake.style.display="none";
 			hint.style.display="none"
 			mistake1.style.display="none";
