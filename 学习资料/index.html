@@ -638,7 +638,8 @@
 
 
         <!--资源管理-->
-        <div class="jzx_content BOX" style="display: none;">
+
+        <div class="jzx_content BOX"  style="display: none;">
             <div class="jzx_mage">
                 <div class="jzx_CH">
                     <div class="line"></div>
@@ -655,7 +656,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="jzx_EN">
+                <div class="jzx_EN" style="margin-right: 0;">
                     <div class="line"></div>
                     <div class="p_text">资源管理</div>
                     <img src="img/mage02.png" alt="">
@@ -679,16 +680,20 @@
                 <div class="jzx_block">
                     <div class="checkbox">
                         <div class="check">
-                            <input type="checkbox">
+                            <input type="checkbox" id="jzx_questionNo1">
+                            <label for="jzx_questionNo1"></label>
                         </div>
                         <div class="check">
-                            <input type="checkbox">
+                            <input type="checkbox" id="jzx_questionNo2">
+                            <label for="jzx_questionNo2"></label>
                         </div>
                         <div class="check">
-                            <input type="checkbox">
+                            <input type="checkbox" id="jzx_questionNo3">
+                            <label for="jzx_questionNo3"></label>
                         </div>
                         <div class="check">
-                            <input type="checkbox">
+                            <input type="checkbox" id="jzx_questionNo4">
+                            <label for="jzx_questionNo4"></label>
                         </div>
                     </div>
                     <div class="login">
@@ -760,9 +765,80 @@
             </div>
 
         </div>
-
+        <div class="jzx_content BOX" style="padding:15px 15px 0;display: none;">
+            <div class="jzx_caption">
+                <div class="fig">
+                    <p>节点数：</p>
+                    <span>5</span>
+                </div>
+                <div class="pass">
+                    <div class="h_pass">节点密码：</div>
+                    <input type="text" placeholder="zmhodws865">
+                    <!--<div class="passblock">zmhodws865</div>-->
+                </div>
+                <button>提交</button>
+            </div>
+            <div class="jzx_primary">
+                <ul class="jzx_block">
+                    <li class="jzx_list">
+                        <h2>Master</h2>
+                        <div class="jzx_text" style="margin-top: -3px;">
+                            <p><span style="font-size: 18px; color: #fff;">5</span>核</p>
+                            <p><span style="font-size: 18px; color: #fff;">5G</span>内存</p>
+                            <p><span style="font-size: 18px; color: #fff;">20G</span>存储</p>
+                        </div>
+                    </li>
+                    <li class="jzx_list">
+                        <h2>Master</h2>
+                        <div class="jzx_text" style="margin-top: -3px;">
+                            <p><span style="font-size: 18px; color: #fff;">5</span>核</p>
+                            <p><span style="font-size: 18px; color: #fff;">5G</span>内存</p>
+                            <p><span style="font-size: 18px; color: #fff;">20G</span>存储</p>
+                        </div>
+                    </li>
+                    <li class="jzx_list">
+                        <h2>Master</h2>
+                        <div class="jzx_text" style="margin-top: -3px;">
+                            <p><span style="font-size: 18px; color: #fff;">5</span>核</p>
+                            <p><span style="font-size: 18px; color: #fff;">5G</span>内存</p>
+                            <p><span style="font-size: 18px; color: #fff;">20G</span>存储</p>
+                        </div>
+                    </li>
+                    <li class="jzx_list">
+                        <h2>Master</h2>
+                        <div class="jzx_text" style="margin-top: -3px;">
+                            <p><span style="font-size: 18px; color: #fff;">5</span>核</p>
+                            <p><span style="font-size: 18px; color: #fff;">5G</span>内存</p>
+                            <p><span style="font-size: 18px; color: #fff;">20G</span>存储</p>
+                        </div>
+                    </li>
+                    <li class="jzx_list">
+                        <h2>Master</h2>
+                        <div class="jzx_text" style="margin-top: -3px;">
+                            <p><span style="font-size: 18px; color: #fff;">5</span>核</p>
+                            <p><span style="font-size: 18px; color: #fff;">5G</span>内存</p>
+                            <p><span style="font-size: 18px; color: #fff;">20G</span>存储</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="jzx_ambient">
+                <div class="line"></div>
+                <div class="p_text">实验环境</div>
+                <div class="h_text">
+                    <p>大数据实验环境</p>
+                    <p style="left: 140px;">包含全部组件集群</p>
+                </div>
+                <div class="j_text">（hadoop,hbase,hive,spark,storm）</div>
+                <div class="map">
+                    <img src="img/map.png" alt="">
+                </div>
+            </div>
+        </div>
         <!--购买记录-->
-        <div  class="shy_content BOXyc" style="padding:15px 15px 0;display: none; ">
+
+
+        <div class="shy_content  BOXyc" style="padding:15px 15px 0 ;display: none">
             <div class="acount">
                 <div class="icont"></div>
                 <h2>购买服务</h2>
@@ -824,11 +900,11 @@
                 <div class="list">
                     <h2>起止日期 ：</h2>
                     <div class="list-first">
-                        <h3>2018/9/5 <i class="iconfont icon-sanjiaodown"></i></h3>
+                        <input type="date">
                     </div>
                     <h2 class="tit">截止日期 ：</h2>
                     <div class="list-first">
-                        <h3>2018/9/5 <i class="iconfont icon-sanjiaodown"></i></h3>
+                        <input type="date">
                     </div>
                 </div>
                 <div class="bottom">

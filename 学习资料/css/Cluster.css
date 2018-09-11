@@ -58,7 +58,6 @@ main{
     height: 650px;
     display: flex;
 }
-
 main .list{
     background: #fff;
 
@@ -129,7 +128,7 @@ main .jzx_content .jzx_caption .pass .h_pass{
     color: rgba(0,0,0,0.4);
     display: inline-block;
 }
-main .jzx_content .jzx_caption .pass .passblock{
+main .jzx_content .jzx_caption .pass input{
     width: 153px;
     height: 28px;
     background: rgba(0,0,0,0.05);
@@ -139,6 +138,8 @@ main .jzx_content .jzx_caption .pass .passblock{
     font-weight: bolder;
     color: rgba(0,0,0,0.4);
     line-height: 28px;
+    border:none;
+    outline: none;
 }
 main .jzx_content .jzx_caption button{
     width: 82px;
