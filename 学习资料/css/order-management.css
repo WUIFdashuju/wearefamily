@@ -186,6 +186,7 @@ main .zy_content .zy_details{
     margin-top: 10px;
     border-radius: 3px;
     padding:33px 30px 0 30px;
+    position: relative;
 }
 main .zy_content .zy_details table{
     border: 1px solid #f4f4f4;
@@ -199,39 +200,81 @@ main .zy_content .zy_details table td{
     line-height: 54px;
     text-align: center;
 }
-main .zy_content .zy_details table td.zy_small{
+
+
+/*#region 表单*/
+/* 服务管理 */
+main .zy_content .zy_details table td.zy_small1{
+    width: 79px;
+}
+/*天数*/
+main .zy_content .zy_details table td.zy_small2{
+    width: 73px;
+}
+/*规模 金额*/
+main .zy_content .zy_details table td.zy_small3{
+    width: 74px;
+}
+/*内容 */
+main .zy_content .zy_details table td.zy_small4{
     width: 72px;
 }
-main .zy_content .zy_details table td.zy_large{
-    width: 104px;
+/*抬头   状态  操作*/
+main .zy_content .zy_details table td.zy_small5{
+    width: 73px;
 }
+
+
+/*购买时间 */
+main .zy_content .zy_details table td.zy_large1{
+    width: 91px;
+}
+/*开始时间 结束时间*/
+main .zy_content .zy_details table td.zy_large2{
+    width: 97px;
+}
+/*纳税人识别号*/
 main .zy_content .zy_details table td.zy_largest{
-    width: 108px;
+    width: 133px;
 }
+/*收件人信息*/
 main .zy_content .zy_details table td.zy_people{
     width: 104px;
 }
+/*#endregion*/
+
+
+
 main .zy_content .zy_details table td.zy_title{
     color: #666;
 }
-main .zy_content .zy_details table td .zy_del{
-    width: 59px;
-    height: 29px;
-    background: #4381e6;
-    border-radius: 2px;
+
+main .zy_content .zy_details table td button{ 
+    display: inline-block;
+    background-color: #4381e6;
     font-size: 14px;
-    /* text-align: center; */
+    text-decoration: none;
+    color: #fff;
+    height: 29px;
+    width: 59px;
     line-height: 29px;
-    margin-left: 6px;
+    border: none;
+    border-radius: 2px;
 }
+
 main .zy_content .zy_details table td .zy_del a{
     color: #fff;
 }
 main .zy_content .zy_details .zy_page{
     width: 522px;
     height: 30px;
-    margin: 0 auto;
     margin-top: 24px;
+    /* margin-bottom: 27px; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 27px;
 }
 main .zy_content .zy_details .zy_page .zy_next{
     width: 94px;
