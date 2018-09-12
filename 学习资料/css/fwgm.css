@@ -185,7 +185,7 @@ main .shy_content  .bottom{
     display: flex;
     margin-left: 95px;
 }
-main .shy_content  .bottom  .radio{
+main .shy_content  .bottom  input{
     width: 18px;
     height: 18px;
     background: #1fc66e;
@@ -285,19 +285,12 @@ main  .shy_content .type .ner-frist{
     display: flex;
     flex-wrap: wrap;
 }
-main  .shy_content .type .ner-frist  .radior{
+main  .shy_content .type .ner-frist  input{
     width: 18px;
     height: 18px;
     background: #1fc66e;
     border-radius: 4px;
     margin: auto 0;
-}
-main  .shy_content .type .ner-frist  .radior i {
-    font-size: 8px;
-    color: white;
-    display: block;
-    text-align: center;
-    line-height: 18px;
 }
 main  .shy_content .type .ner-frist   span{
     font-size: 14px;
