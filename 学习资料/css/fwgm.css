@@ -283,7 +283,7 @@ main  .shy_content .people  h2{
     padding-left: 8px;
     color: rgba(0,0,0,0.6);
 }
-main  .shy_content .people .list-pe{
+main  .shy_content .people input{
     width: 78px;
     height: 32px;
     border: 1px solid #f3f3f4;
