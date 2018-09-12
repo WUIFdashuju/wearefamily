@@ -35,19 +35,18 @@
     <main>
         <!--左侧列表-->
         <div class="list">
-                <p class="a">集群管理</p>
-                <p class="op c">学习资料</p>
+                <p class="a active">集群管理</p>
+                <p class="op a c">学习资料</p>
             <!--学习资料子菜单-->
             <div class="guizi">
                 <p class="ed b" >学生学习资料</p>
                 <p class="ed b">教师学习资料</p>
             </div>
-
             <!--学习资料子菜单结束-->
                 <p class="a">分类管理</p>
                 <p class="a">账户管理</p>
                 <p class="a">资源管理</p>
-                <p class="op c">购买记录</p>
+                <p class="op a c">购买记录</p>
             <div class="guizi">
                 <p class="ed b">订单管理</p>
                 <p class="ed b">服务购买</p>
@@ -55,10 +54,7 @@
 
         </div>
         <!--左侧列表结束-->
-
-
         <!--集群管理-->
-
         <div class="jzx_content BOX" style="padding:15px 15px 0;display: block ;  ">
             <div class="jzx_caption">
                 <div class="fig">
@@ -635,10 +631,7 @@
                 </div>
             </div>
         </div>
-
-
         <!--资源管理-->
-
         <div class="jzx_content BOX"  style="display: none;">
             <div class="jzx_mage">
                 <div class="jzx_CH">
@@ -836,8 +829,6 @@
             </div>
         </div>
         <!--购买记录-->
-
-
         <div class="shy_content  BOXyc" style="padding:15px 15px 0 ;display: none">
             <div class="acount">
                 <div class="icont"></div>
@@ -985,10 +976,7 @@
 
             </div>
         </div>
-
         <!--订单管理-->
-
-
         <div class="zy_content BOXyc" style="display: none;">
             <!-- 选项内容 -->
             <div class="zy_news">
@@ -1168,9 +1156,6 @@
     <!--底部-->
     <footer>c 2017-2018 http://sxuek.com山西优逸客科技有限公司版权所有</footer>
 
-
-
-
 </body>
 <script src="js/index.js"></script>
 <script src="js/Cluster.js"></script>
@@ -1234,8 +1219,7 @@
            BOXs[i].style.display = "block";
 
        }
-    })
-
+    });
     LISTSyc.forEach((v,index)=>{
         v.onclick = function () {
             for(let i=0;i<BOXs.length;i++){
@@ -1253,14 +1237,20 @@
 
             BOXycs[index].style.display = "block";
         }
-    })
+    });
 
-
+    // 二级下拉菜单
     for (let i=0; i < guizi.length; i++) {
         op[i].onclick =function () {
+            // 点击展开，再次点击收起
             if (guizi[i].style.height == 78 +"px") {
+
                 guizi[i].style.height=0+"px";
             }else{
+                // for循环
+                for (let j = 0; j < guizi.length; j++) {
+                    guizi[j].style.height=0+"px";
+                }
                 guizi[i].style.height=78+"px";
             }
 
@@ -1271,10 +1261,24 @@
                 LISTSyc[i].classList.remove("active");
             }
             op[i].classList.add("active");
-
-
         }
     }
+
+
+
+
+    let alllist = document.querySelector(".list");
+        alllist.onclick = function(e){
+        if (e.target.className != "op a c active"){
+            // e.target的下一个兄弟元素的height =78px
+            guizi[0].style.height=0+"px";
+            guizi[1].style.height=0+"px";
+        }
+
+    };
+
+
+
 
 
 
