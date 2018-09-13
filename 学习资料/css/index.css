@@ -84,7 +84,7 @@ main .list  p .WH_shadow{
     width: 1px;
     height: 1px;
     background: rgba(0,0,0,0.2);
-    transition: transform 1s;
+    transition: transform .5s;
     border-radius: 50%;
 }
 /*endregion*/
