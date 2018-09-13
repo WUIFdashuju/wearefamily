@@ -271,10 +271,10 @@
                             <div class="close">×</div>
                         </div>
                         <div class="text2">
-                            <h5>姓名</h5>
+                            <h5>实验名</h5>
                             <input type="text">
                         </div>
-                        <div class="load">上传</div>
+                        <div class="load" style="cursor: pointer">上传</div>
                         <div class="text3">
                             <h5>介绍</h5>
                             <textarea name="" cols="30" rows="10"></textarea>
@@ -291,7 +291,7 @@
                             <h5>三级分类</h5>
                             <input type="text" placeholder="大数据实验一体机基本">
                         </div>
-                        <div class="text7">
+                        <div class="text7" style="cursor: pointer">
                             添加
                         </div>
                     </div>
@@ -532,10 +532,18 @@
                     </h2>
                 </div>
                 <div class="bottom">
-                    <div class="select">
-                        登录名
-                        <i class="icon"><img src="img/pull-down.png" alt=""></i>
-                    </div>
+                    <select name="">
+                        <option value="">
+                            登录名
+                            <i class="icon"><img src="img/WH_angle.png" alt=""></i>
+                        </option>
+                        <option value="">姓名</option>
+                        <option value="">学号</option>
+                        <option value="">性别</option>
+                        <option value="">专业(系)</option>
+                        <option value="">院校</option>
+                        <option value="">班级</option>
+                    </select>
                     <input type="text">
                     <div class="Inquire">搜索学生</div>
                     <div class="new">新建学生</div>
@@ -1343,29 +1351,189 @@
     let cover = document.querySelector(".CX_content .goods1 .add");
     //修改框1，添加框0
     let nav  = document.querySelectorAll(".CX_content .goods1 .add .nav");
-    // console.log(nav);
     //点击添加按钮，跳出添加框
-addbtn.onclick = function(){
-    cover.style.display = "block"  ;
-    nav[0].style.zIndex= 3;
-    nav[1].style.zIndex = 1;
-    nav[0].style.opacity=1;
-    nav[1].style.opacity=0;
-    nav[0].classList.add("fadeInDown");
-    setTimeout(function () {
-        nav[0].classList.remove("fadeInDown");
-    },700);
-}
+
+    //获取table标签
+    let cxtable=document.querySelector(".CX_content .goods1 .bottom table");
+    //填写完资料的添加
+    let text7 = document.querySelector(".CX_content .goods1 .add .nav .text7");
+    // 实验名
+    let cxinput1 = document.querySelector(".CX_content .goods1 .add .nav .text2 input");
+    //介绍
+    let cxinput2 = document.querySelector(".CX_content .goods1 .add .nav .text3 textarea");
+    //类型  一级分类
+    let cxinput3 = document.querySelector(".CX_content .goods1 .add .nav .text4 input");
+
+    // 生成新的行
+    console.log(cxinput1, cxinput2, cxinput3);
+    let tablebox = document.querySelectorAll(".CX_content .goods1 .bottom table tbody");
+    let del = document.querySelectorAll(".CX_content .goods1 .bottom table tr td.play .del");
+    //点击添加，生成一条新的记录
+    text7.onclick =function(){
+        setTimeout(function () {
+            cover.style.display = "none";
+            nav[0].classList.remove("fadeOutDown");
+
+        },700);
+
+        nav[0].classList.add("fadeOutDown");
+    //    获取cxinput1, cxinput2, cxinput3的内容
+        if (cxinput1.value =="" ||cxinput2.value=="" ||cxinput3.value==""){
+            alert("添加失败，请输入有效内容");
+        }
+
+        tablebox[0].innerHTML += `<tr>
+              <td>${cxinput1.value}</td>
+               <td>${cxinput2.value}</td>
+              <td>${cxinput3.value}</td>
+             <td><div class="down">下载</div></td>
+            <td class="play">
+                <div class="del">删除</div>
+                <div class="fix">修改</div>
+            </td>
+            </tr>`
+        console.log(tablebox[0]);
+        del = document.querySelectorAll(".CX_content .goods1 .bottom table tr td.play .del");
+        fixbtn =document.querySelectorAll(".CX_content .goods1 .bottom table tr td.play .fix");
+
+
+        fixbtn.forEach((value,index)=>{
+            value.onclick = function() {
+            cover.style.display = "block"  ;
+            nav[0].style.zIndex=1;
+            nav[1].style.zIndex = 3;
+            nav[1].style.opacity=1;
+            nav[0].style.opacity=0;
+            nav[1].classList.add("fadeInDown");
+            setTimeout(function () {
+                nav[1].classList.remove("fadeInDown");
+            },700);
+
+            let ctbtng = document.querySelector(".xx .cta .text7");
+            console.log(ctbtng);
+            ctbtng.onclick = function () {
+                let input1 = document.querySelector(".xx .cta  .text2 input");
+                let input2 = document.querySelector(".xx .cta  .text3 textarea");
+                let input3 = document.querySelector(".xx .cta  .text4 input");
+                let input4 = document.querySelector(".xx .cta  .text5 input");
+                let input5 = document.querySelector(".xx .cta  .text6 input");
+                let firstC = value.parentNode.parentNode.firstElementChild;
+                let twoC = firstC.nextElementSibling;
+                console.log( firstC,twoC);
+                firstC.innerHTML = input1.value;
+                twoC.innerHTML = input2.value;
+                input1.value = "";
+                input2.value = "";
+                input3.value=input4.value=input5.value="";
+            }
+
+
+        };
+    })
+
+
+
+
+
+
+        //添加后的删除函数
+        for (let i=0;i<del.length;i++){
+            del[i].onclick =function(e){
+                //    移出被点击的行
+                tablebox[0].removeChild(e.target.parentNode.parentNode);
+            };
+        }
+
+    };
+
+
+    fixbtn.forEach((value,index)=>{
+        value.onclick = function() {
+        cover.style.display = "block"  ;
+        nav[0].style.zIndex=1;
+        nav[1].style.zIndex = 3;
+        nav[1].style.opacity=1;
+        nav[0].style.opacity=0;
+        nav[1].classList.add("fadeInDown");
+        setTimeout(function () {
+            nav[1].classList.remove("fadeInDown");
+        },700);
+
+        let ctbtng = document.querySelector(".xx .cta .text7");
+        console.log(ctbtng);
+        ctbtng.onclick = function () {
+            let input1 = document.querySelector(".xx .cta  .text2 input");
+            let input2 = document.querySelector(".xx .cta  .text3 textarea");
+            let input3 = document.querySelector(".xx .cta  .text4 input");
+            let input4 = document.querySelector(".xx .cta  .text5 input");
+            let input5 = document.querySelector(".xx .cta  .text6 input");
+            let firstC = value.parentNode.parentNode.firstElementChild;
+            let twoC = firstC.nextElementSibling;
+            console.log( firstC,twoC);
+            firstC.innerHTML = input1.value;
+            twoC.innerHTML = input2.value;
+            input1.value = "";
+            input2.value = "";
+            input3.value=input4.value=input5.value="";
+        }
+
+
+    };
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //删除按钮
+    for (let i=0;i<del.length;i++){
+        del[i].onclick =function(e){
+            //    移出被点击的行
+            console.log(e.target);
+            tablebox[0].removeChild(e.target.parentNode.parentNode);
+
+        };
+    }
+
+
+
+
+
+
+
+
+
+
+    addbtn.onclick = function(){
+        cover.style.display = "block"  ;
+        nav[0].style.zIndex= 3;
+        nav[1].style.zIndex = 1;
+        nav[0].style.opacity=1;
+        nav[1].style.opacity=0;
+        nav[0].classList.add("fadeInDown");
+        setTimeout(function () {
+            nav[0].classList.remove("fadeInDown");
+        },700);
+    };
+
+
+
+
+
 
 
     //点击修改按钮，跳出修改框
-    // for (let i=0;i<fixbtn.length;i++){
-    //     fixbtn[i].onclick = function (){
-    //
-    //     };
-    //
-    // }
-
     fixbtn.forEach((value,index)=>{
         value.onclick = function() {
             cover.style.display = "block"  ;
@@ -1397,17 +1565,8 @@ addbtn.onclick = function(){
             }
 
 
-        }
+        };
     })
-
-
-
-
-
-
-
-
-
 
     //点击 添加页面的 关闭，
     close[0].onclick =function(){
@@ -1420,6 +1579,8 @@ addbtn.onclick = function(){
         nav[0].classList.add("fadeOutDown");
 
     };
+
+
     close[1].onclick =function(){
         setTimeout(function () {
             cover.style.display = "none";
@@ -1434,22 +1595,6 @@ addbtn.onclick = function(){
     //点击添加按钮，跳出弹出框，输入内容，并赋值给table
 
 
-
-
-
-
-
-    //删除按钮
-    let del = document.querySelectorAll(".CX_content .goods1 .bottom table tr td.play .del");
-    let tablebox = document.querySelectorAll(".CX_content .goods1 .bottom table tbody");
-
-    for (let i=0;i<del.length;i++){
-        del[i].onclick =function(){
-            //    移出被点击的行
-            tablebox[0].removeChild(del[i].parentNode.parentNode);
-        };
-    }
-
     let del1 = document.querySelectorAll(".CX_content .goods1 .bottom .table1 tr td.play .del");
     let tablebox2 = document.querySelectorAll(".CX_content .goods1 .bottom .table1 tbody")[0];
     // console.log(del1, tablebox2);
@@ -1460,21 +1605,8 @@ addbtn.onclick = function(){
         };
     }
 
-        //修改
-    // let ctxg = document.querySelectorAll(".CX_content.xx tr .fix");
-    // console.log(ctxg);
-
-
-
-
-
-
-
-
-
 
     //资源管理的js
-    //     console.log(1);
         let tabel=document.querySelector(".jzx_content tbody");
         // console.log(tabel);
         //修改
