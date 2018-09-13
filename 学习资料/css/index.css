@@ -191,11 +191,13 @@ main .CX_content{
     background-color: #25cb77;
     border-radius: 4px;
     font-size: 14px;
+    border-collapse: collapse;
     font-weight: normal;
     font-stretch: normal;
     letter-spacing: 1px;
     color: #ffffff;
     text-align: center;
+    border-collapse: collapse;
 }
 .CX_content .bottom {
     width: 100%;
@@ -205,9 +207,11 @@ main .CX_content{
     display: flex;
     justify-content: space-between;
     text-align: center;
+    border-collapse: collapse;
 }
 .CX_content .bottom table{
     width: 100%;
+    border-collapse: collapse;
 
 }
 .CX_content .bottom table tr th{
@@ -218,13 +222,16 @@ main .CX_content{
 }
 .CX_content .bottom table tr th:nth-child(5){
     border-right: none;
+    border-bottom: none;
 }
 
 
 .CX_content .bottom table tr{
+    border-collapse: collapse;
 
 }
 .CX_content .bottom table tr td{
+    height: 42px;
     line-height: 42px;
     border-bottom: 1px solid rgba(236,236,236,0.6);
     border-right: 1px solid rgba(236,236,236,0.6);
@@ -232,9 +239,9 @@ main .CX_content{
     color: rgba(0,0,0,0.4);
     text-align: center;
 }
-.CX_content .bottom table tr:nth-last-child(1) td{
-    border-bottom: 0;
-}
+/*.CX_content .bottom table tr:nth-last-child(1) td{*/
+    /*border-bottom: 0;*/
+/*}*/
 .CX_content .bottom table tr td .down{
     width: 82px;
     height: 29px;
@@ -245,14 +252,20 @@ main .CX_content{
     color: #ffffff;
     cursor: pointer;
 }
+
+
 .CX_content .bottom table tr td.play{
     display: flex;
     align-items: center;
     justify-content: space-around;
     border-right: none;
+    border-top: 1px solid rgba(236,236,236,0.6);
+    border-bottom: 0px solid rgba(236,236,236,0.6);
+
 }
 .CX_content .bottom table tr td.play .del{
     cursor: pointer;
+
 }
 .CX_content .bottom table tr td.play .fix{
 
