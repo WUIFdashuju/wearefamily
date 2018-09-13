@@ -119,11 +119,11 @@ main .CX_content{
     padding-right: 28px;
 }
 .CX_content .goods1{
-    height: 458px;
     background-color: #ffffff;
     border-radius: 4px;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 20px;
 }
 .CX_content .top{
     display: flex;

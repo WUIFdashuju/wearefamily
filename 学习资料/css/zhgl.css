@@ -367,21 +367,16 @@ main .WH_content .manage .account h2{
     line-height: 14px;
     margin-left: 8px;
 }
-
-/*登录名*/
-
-/*#region 登录选卡  */
 main .WH_content .manage .bottom{
     margin-top: 22px;
     width: 100%;
     height: 29px;
     display: flex;
-    position:relative;
 }
 /*登录名*/
-main .WH_content .manage .bottom select{
+main .WH_content .manage .bottom .select{
     width: 94px;
-    height:29px;
+    height: 29px;
     border-radius: 4px;
     border: solid 1px #f4f4f4;
     font-size: 14px;
@@ -389,27 +384,18 @@ main .WH_content .manage .bottom select{
     font-stretch: normal;
     line-height: 29px;
     text-align: center;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.4);
     letter-spacing: 1px;
     cursor: pointer;
-    -webkit-appearance:none;
-    padding: 0 1.5%;
 }
-main .WH_content .manage .bottom:after{
-    content:"";
+main .WH_content .manage .bottom .select .icon{
     width: 5px;
     height: 5px;
-    display: block;
-    background: url("../img/pull-down.png") no-repeat;
-    position:absolute;
-    top:13px;
-    left:75px;
 }
-main .WH_content .manage .bottom select option{
-    text-align: center;
+main .WH_content .manage .bottom .select .icon img{
+    width: 5px;
+    height: 5px;
 }
-/*endregion*/
-
 main .WH_content .manage .bottom input{
     width: 188px;
     height: 29px;
