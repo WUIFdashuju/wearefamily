@@ -322,7 +322,7 @@
                             <h5>三级分类</h5>
                             <input type="text" placeholder="大数据实验一体机基本">
                         </div>
-                        <div class="text7">
+                        <div class="text7" style="cursor: pointer">
                             添加
                         </div>
                     </div>
@@ -532,18 +532,10 @@
                     </h2>
                 </div>
                 <div class="bottom">
-                    <select name="">
-                        <option value="">
-                            登录名
-                            <i class="icon"><img src="img/WH_angle.png" alt=""></i>
-                        </option>
-                        <option value="">姓名</option>
-                        <option value="">学号</option>
-                        <option value="">性别</option>
-                        <option value="">专业(系)</option>
-                        <option value="">院校</option>
-                        <option value="">班级</option>
-                    </select>
+                    <div class="select">
+                        登录名
+                        <i class="icon"><img src="img/pull-down.png" alt=""></i>
+                    </div>
                     <input type="text">
                     <div class="Inquire">搜索学生</div>
                     <div class="new">新建学生</div>
@@ -1391,8 +1383,16 @@
                 <div class="del">删除</div>
                 <div class="fix">修改</div>
             </td>
+<<<<<<< HEAD
             </tr>`
         console.log(tablebox[0]);
+=======
+            </tr>`;
+
+            cxinput1.value ="";
+             cxinput2.value="";
+             cxinput3.value="";
+>>>>>>> 1cffd22dfe27335cbeabe1f3ad57eb0b6329492e
         del = document.querySelectorAll(".CX_content .goods1 .bottom table tr td.play .del");
         fixbtn =document.querySelectorAll(".CX_content .goods1 .bottom table tr td.play .fix");
 
