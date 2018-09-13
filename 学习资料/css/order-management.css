@@ -249,7 +249,8 @@ main .zy_content .zy_details table td.zy_title{
     color: #666;
 }
 
-main .zy_content .zy_details table td button{ 
+main .zy_content .zy_details table td button{
+    cursor: pointer;
     display: inline-block;
     background-color: #4381e6;
     font-size: 14px;
